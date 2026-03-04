@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Boerderij — Boerderij IJsautomaat Megen</title>
+    <meta name="description" content="Ontdek onze boerderij aan de Maasbommelsestraat in Megen. Een stukje Brabants platteland met verse streekproducten, knotwilgen en landelijk uitzicht.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="7d1fe092-7f2d-462a-bb2c-a9a0105ea460"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#92400E', secondary: '#B45309', cream: '#FEF3C7', 'cream-dark': '#FDE68A', 'text-brown': '#78350F', forest: '#4A7C23', 'forest-light': '#6B9B3A' },
+                    fontFamily: { display: ['"Amatic SC"', 'cursive'], body: ['Cabin', 'sans-serif'] },
+                    borderRadius: { organic: '24px', 'organic-sm': '16px' },
+                    boxShadow: { natural: '0 8px 32px rgba(0,0,0,0.08)', 'natural-lg': '0 16px 48px rgba(0,0,0,0.12)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cabin', sans-serif; color: #78350F; }
+        .nav-blur { backdrop-filter: blur(12px); background: rgba(254,243,199,0.92); }
+        .blob-shape { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    </style>
+</head>
+<body class="bg-cream">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 nav-blur shadow-natural">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+                    <svg class="w-8 h-8 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-1.5 0-3 1.5-3 4 0 1.5.5 2.5 1 3.5C8.5 11 7 12 7 14c0 2.5 2 4 5 4s5-1.5 5-4c0-2-1.5-3-3-3.5.5-1 1-2 1-3.5 0-2.5-1.5-4-3-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v3"/></svg>
+                    <span class="font-display text-2xl md:text-3xl font-bold text-primary">Boerderij IJsautomaat</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="font-body font-medium text-text-brown hover:text-forest transition-colors duration-200 cursor-pointer">Home</a>
+                    <a href="producten.html" class="font-body font-medium text-text-brown hover:text-forest transition-colors duration-200 cursor-pointer">Producten</a>
+                    <a href="de-boerderij.html" class="font-body font-semibold text-primary hover:text-forest transition-colors duration-200 cursor-pointer">De Boerderij</a>
+                    <a href="contact.html" class="font-body font-medium text-text-brown hover:text-forest transition-colors duration-200 cursor-pointer">Contact</a>
+                    <a href="contact.html#route" class="inline-flex items-center gap-2 bg-forest text-white px-5 py-2.5 rounded-organic-sm font-body font-semibold hover:bg-forest-light transition-colors duration-200 cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Route
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-organic-sm hover:bg-cream-dark transition-colors duration-200 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu openen">
+                    <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-cream-dark">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block py-2 px-3 rounded-organic-sm font-body font-medium text-text-brown hover:bg-cream-dark cursor-pointer">Home</a>
+                <a href="producten.html" class="block py-2 px-3 rounded-organic-sm font-body font-medium text-text-brown hover:bg-cream-dark cursor-pointer">Producten</a>
+                <a href="de-boerderij.html" class="block py-2 px-3 rounded-organic-sm font-body font-semibold text-primary bg-cream-dark cursor-pointer">De Boerderij</a>
+                <a href="contact.html" class="block py-2 px-3 rounded-organic-sm font-body font-medium text-text-brown hover:bg-cream-dark cursor-pointer">Contact</a>
+                <a href="contact.html#route" class="block py-2 px-3 rounded-organic-sm font-body font-semibold text-white bg-forest text-center cursor-pointer">Route</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-20 md:pt-24">
+        <div class="relative h-[50vh] md:h-[60vh] overflow-hidden">
+            <img src="images/google_place_2.jpg" alt="Boerderij IJsautomaat Megen — knotwilgen en landelijke setting in de avond" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-cream via-cream/20 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Verhaal -->
+    <section class="py-16 md:py-24 px-4 md:px-6 lg:px-8 -mt-32 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-organic p-8 md:p-12 shadow-natural-lg">
+                <span class="inline-block font-body text-sm font-semibold text-forest uppercase tracking-wider mb-3">Ons Verhaal</span>
+                <h1 class="font-display text-5xl md:text-7xl font-bold text-primary mb-8">De Boerderij</h1>
+
+                <div class="prose max-w-none space-y-6">
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Aan de Maasbommelsestraat in het pittoreske Megen — een historisch stadje aan de Maas in Noord-Brabant — staat onze boerderij. Omgeven door knotwilgen, groene weiden en het typische Brabantse landschap bieden wij dagelijks verse streekproducten aan.
+                    </p>
+
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-primary pt-4">Het Streekpunt</h2>
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Bij onze boerderij staat het Streekpunt: een verkooppunt waar je 7 dagen per week terecht kunt voor verse producten uit de regio. Van ambachtelijk ijs en boerenkaas tot boerenyoghurt, roomboter, vla, melk, eieren, appels en vlees.
+                    </p>
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Alles netjes gepresenteerd in houten kisten en een overzichtelijk krijtbord met het actuele aanbod. Geen gedoe, geen rijen — gewoon even stoppen, uitkiezen en meenemen.
+                    </p>
+
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-primary pt-4">De Omgeving</h2>
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Megen ligt in de gemeente Oss, aan de Maas. Het is een geliefd punt voor fietsers en wandelaars die genieten van het rivierenlandschap. Onze boerderij is een perfecte tussenstop: pak een bankje, geniet van een ijsje en neem de rust van het platteland in je op.
+                    </p>
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Met de Brabantse rood-witte vlag als decoratie en een groot softijshoorn als herkenningspunt, kun je ons niet missen.
+                    </p>
+
+                    <h2 class="font-display text-3xl md:text-4xl font-bold text-primary pt-4">Hoe het Werkt</h2>
+                    <p class="font-body text-lg text-text-brown/80 leading-relaxed">
+                        Het Streekpunt is dagelijks geopend van 09:00 tot 21:30. Je kunt producten kiezen uit de automaat of het uitgestalde aanbod. Betalen kan contant of per pin. Heb je vragen? Bel ons gerust op <a href="tel:0629390908" class="text-forest font-semibold hover:text-forest-light transition-colors duration-200 cursor-pointer">06-29390908</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foto Galerij -->
+    <section class="py-16 px-4 md:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-primary mb-4">Sfeerbeelden</h2>
+                <p class="font-body text-text-brown/70">Een kijkje op het erf</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative group cursor-pointer overflow-hidden rounded-organic" onclick="openLightbox(this.querySelector('img'))">
+                    <img src="images/google_place_1.jpg" alt="Producten uitgestald bij de boerderij — kaas, yoghurt, vla, roomboter en softijs" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-organic-sm px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-body text-sm font-semibold text-primary">Het Streekpunt — dagelijks vers</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer overflow-hidden rounded-organic" onclick="openLightbox(this.querySelector('img'))">
+                    <img src="images/google_place_2.jpg" alt="Boerderij in de avond — knotwilgen, kaasvaandel en picknicktafel" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-organic-sm px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="font-body text-sm font-semibold text-primary">Sfeer op het erf — knotwilgen en kaasvaandel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-4 md:px-6 lg:px-8 bg-primary text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Benieuwd?</h2>
+            <p class="font-body text-lg text-white/80 mb-8">Kom langs en proef het zelf. We zijn 7 dagen per week open.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="producten.html" class="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-organic font-body font-bold text-lg hover:bg-cream transition-colors duration-200 cursor-pointer">
+                    Bekijk Producten
+                </a>
+                <a href="contact.html#route" class="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-organic font-body font-bold text-lg hover:bg-white/10 transition-colors duration-200 cursor-pointer">
+                    Route Plannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-brown text-white/80 py-12 px-4 md:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Boerderij IJsautomaat</h3>
+                    <p class="font-body text-sm leading-relaxed">Verse streekproducten uit de automaat — dagelijks geopend in Megen, Noord-Brabant.</p>
+                </div>
+                <div>
+                    <h4 class="font-body font-semibold text-white mb-4">Pagina's</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="font-body text-sm hover:text-cream-dark transition-colors duration-200 cursor-pointer">Home</a></li>
+                        <li><a href="producten.html" class="font-body text-sm hover:text-cream-dark transition-colors duration-200 cursor-pointer">Producten</a></li>
+                        <li><a href="de-boerderij.html" class="font-body text-sm hover:text-cream-dark transition-colors duration-200 cursor-pointer">De Boerderij</a></li>
+                        <li><a href="contact.html" class="font-body text-sm hover:text-cream-dark transition-colors duration-200 cursor-pointer">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-body font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="font-body text-sm">Maasbommelsestraat 28</li>
+                        <li class="font-body text-sm">5366 AE Megen</li>
+                        <li><a href="tel:0629390908" class="font-body text-sm hover:text-cream-dark transition-colors duration-200 cursor-pointer">06-29390908</a></li>
+                        <li class="font-body text-sm">Dagelijks 09:00 – 21:30</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="font-body text-xs text-white/50">&copy; 2026 Boerderij IJsautomaat Megen.</p>
+                <p class="font-body text-xs text-white/50">Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-cream-dark transition-colors duration-200 cursor-pointer underline">Code Lieshout</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <button class="absolute top-4 right-4 text-white hover:text-cream-dark transition-colors duration-200 cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Sluiten">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-organic-sm object-contain">
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        function openLightbox(img) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+        }
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>
